@@ -73,7 +73,7 @@ const Slider = () => {
     <div
       style={{
         position: "relative",
-        maxWidth: isMobile ? "100%" : "30%",
+        maxWidth: isMobile ? "100%" : "20%",
         overflow: "hidden", 
         margin: "20px",
         borderRadius: "10px"
