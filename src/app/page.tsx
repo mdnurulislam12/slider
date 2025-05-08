@@ -3,6 +3,8 @@
 
 import Slider from "@/commponents/VideoSlider/Slider";
 
+// import Slider from "@/commponents/VideoSlider/Slider";
+
 export default function Home() {
   return (
     <div className="flex items-center justify-center mt-20">

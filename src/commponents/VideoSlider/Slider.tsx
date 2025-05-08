@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { FaPlay } from "react-icons/fa6";
 
 const data = [
   {
@@ -47,12 +48,12 @@ const Slider = () => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
   const [isMobile, setIsMobile] = useState(false);
-// small divece responsive 
+  // small divece responsive
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -74,9 +75,9 @@ const Slider = () => {
       style={{
         position: "relative",
         maxWidth: isMobile ? "100%" : "20%",
-        overflow: "hidden", 
+        overflow: "hidden",
         margin: "20px",
-        borderRadius: "10px"
+        borderRadius: "10px",
       }}
     >
       {/* Left Arrow */}
@@ -131,7 +132,7 @@ const Slider = () => {
           scrollBehavior: "smooth",
           gap: "20px",
           scrollSnapType: "x mandatory",
-          width: "100%", 
+          width: "100%",
         }}
       >
         {/* Hide scrollbar */}
@@ -169,6 +170,31 @@ const Slider = () => {
                   "linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1))",
               }}
             ></div>
+
+              {/* play button  */}
+            <button
+              onClick={scrollLeft}
+              style={{
+                position: "absolute",
+                left: "45%",
+                top: "50%",
+                right: "50%",
+                transform: "translateY(-50%)",
+                // transform: "translatex(-50%)",
+                zIndex: 1,
+                // backgroundColor: "#fff",
+                border: "3px solid white",
+                borderRadius: "50%",
+                width: "40px",
+                height: "40px",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <FaPlay style={{fontSize: "20px", color: "white"}} />
+            </button>
 
             {/* Views */}
             <div
