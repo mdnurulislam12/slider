@@ -190,7 +190,7 @@ const Slider = () => {
               {item.views}
             </div>
 
-            {/* Title & Description */}
+            {/* Title and Description */}
             <div
               style={{
                 position: "absolute",
